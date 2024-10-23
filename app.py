@@ -88,8 +88,8 @@ else:
     if authenticator_status == False:
         st.error("Username/password is incorrect")
 
-    if authenticator_status is None:
-        st.warning("Insira login e senha")
+    #if authenticator_status is None:
+        #st.warning("Insira login e senha")
 
     if authenticator_status:
 
