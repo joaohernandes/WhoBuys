@@ -78,12 +78,6 @@ login_result = authenticator.login("main")
 if login_result is not None:
     name, authenticator_status, username = login_result
 
-    if authenticator_status == False:
-        st.error("Username/password is incorrect")
-
-    if authenticator_status is None:
-        st.warning("Insira login e senha")
-
     if authenticator_status:
         whiteLogo = 'img/Main Logo White.png'
         blackLogo = 'img/Main Logo Black.png'
@@ -294,3 +288,8 @@ if login_result is not None:
                      )
         elif selecionado == "Sair":
             authenticator.logout("Sair", "main")
+    elif authenticator_status == False:
+        st.error("Username/password is incorrect")
+
+    elif authenticator_status is None:
+        st.warning("Insira login e senha")
