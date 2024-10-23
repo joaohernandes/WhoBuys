@@ -73,12 +73,12 @@ credentials = {
 }
 # Inicializar o autenticador com as credenciais corretas
 authenticator = stauth.Authenticate(credentials, "whobuys", "random_key", cookie_expiry_days=30)
-#name, authenticator_status, username = authenticator.login('main')
 # Faz a chamada ao login apenas uma vez
 login_status = authenticator.login('main')
 if login_status == None:
-    st.warning('teste')
+    st.write(hashed_passwords)  # Para garantir que os hashes estão corretos
 if login_status:
+    name, authenticator_status, username = authenticator.login('main')
     whiteLogo = 'img/Main Logo White.png'
     blackLogo = 'img/Main Logo Black.png'
     iconLogo = 'img/White Icone.png'
