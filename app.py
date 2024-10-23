@@ -73,11 +73,12 @@ credentials = {
 }
 # Inicializar o autenticador com as credenciais corretas
 authenticator = stauth.Authenticate(credentials, "whobuys", "random_key", cookie_expiry_days=30)
-
 #name, authenticator_status, username = authenticator.login('main')
-if authenticator.login('main') == None:
+# Faz a chamada ao login apenas uma vez
+login_status = authenticator.login('main')
+if login_status == None:
     st.warning('teste')
-if authenticator.login('main'):
+if login_status:
     whiteLogo = 'img/Main Logo White.png'
     blackLogo = 'img/Main Logo Black.png'
     iconLogo = 'img/White Icone.png'
@@ -287,5 +288,5 @@ if authenticator.login('main'):
                  )
     elif selecionado == "Sair":
         authenticator.logout("Sair", "main")
-if authenticator.login('main') == False:
+if login_status == False:
     st.error("Username/password is incorrect")
