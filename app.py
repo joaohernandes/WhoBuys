@@ -81,11 +81,10 @@ if login_result is not None:
     if authenticator_status == False:
         st.error("Username/password is incorrect")
 
-    elif authenticator_status is None:
+    if authenticator_status is None:
         st.warning("Insira login e senha")
 
-    #if authenticator_status:
-    else:
+    if authenticator_status:
         whiteLogo = 'img/Main Logo White.png'
         blackLogo = 'img/Main Logo Black.png'
         iconLogo = 'img/White Icone.png'
