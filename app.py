@@ -107,7 +107,7 @@ selecionado = option_menu(
 # Conteúdo baseado na opção selecionada
 if selecionado == "Home":
     #st.write(f"### Bem-vindo {name}")
-    st.image(blackLogo, width=200)  # Exibe o logo principal
+    st.image(blackLogo, width=180)  # Exibe o logo principal
     st.write('## Painel de dados') # Título da página no Streamlit
     # Ordenar os dados pela coluna de Rendimento
     df_sorted = malhaCenso2010.sort_values(by='Rendimento', ascending=False)
