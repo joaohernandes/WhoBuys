@@ -1,0 +1,10 @@
+streamlit
+pandas
+geopandas
+streamlit-option-menu
+folium
+streamlit-folium
+mapclassify
+branca
+plotly
+streamlit-authenticator
