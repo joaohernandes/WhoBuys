@@ -80,19 +80,16 @@ login_response = authenticator.login("main")
 
 # Verifica se o login_response é None
 if login_response is None:
-    st.error("Erro de autenticação: Nenhum dado retornado. Verifique suas credenciais.")
-else:
     # Desempacota os valores de retorno
     name, authenticator_status, username = login_response
 
     if authenticator_status == False:
         st.error("Username/password is incorrect")
 
-    #if authenticator_status is None:
-        #st.warning("Insira login e senha")
+    if authenticator_status is None:
+        st.warning("Insira login e senha")
 
     if authenticator_status:
-
         whiteLogo = 'img/Main Logo White.png'
         blackLogo = 'img/Main Logo Black.png'
         iconLogo = 'img/White Icone.png'
