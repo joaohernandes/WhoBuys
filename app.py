@@ -79,7 +79,7 @@ login_result = authenticator.login('main')
 # Verificar se o login_result é None
 if login_result is None:
     st.warning("Por favor, insira seu login e senha.")
-if login_result is not None:
+if login_result:
     name, authenticator_status, username = authenticator.login('main')
 
     if authenticator_status:
