@@ -80,7 +80,7 @@ login_result = authenticator.login('main')
 if login_result is None:
     st.warning("Por favor, insira seu login e senha.")
 if login_result is not None:
-    name, authenticator_status, username = login_result
+    name, authenticator_status, username = authenticator.login('main')
 
     if authenticator_status:
         whiteLogo = 'img/Main Logo White.png'
