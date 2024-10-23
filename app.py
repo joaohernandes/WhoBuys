@@ -292,5 +292,5 @@ if login_result is not None:
                      )
         elif selecionado == "Sair":
             authenticator.logout("Sair", "main")
-    if authenticator_status == False:
+if login_result == False:
         st.error("Username/password is incorrect")
