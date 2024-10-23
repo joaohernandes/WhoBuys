@@ -74,12 +74,22 @@ credentials = {
 
 # Inicializar o autenticador com as credenciais corretas
 authenticator = stauth.Authenticate(credentials, "whobuys", "random_key", cookie_expiry_days=30)
-name, authenticator_status, username = authenticator.login("main")
+# Realiza o login
+login_response = authenticator.login("main")
+
+# Verifica se o login_response é None
+if login_response is None:
+    st.error("Erro de autenticação: Nenhum dado retornado. Verifique suas credenciais.")
+else:
+    # Desempacota os valores
+    name, authenticator_status, username = login_response
+
+#name, authenticator_status, username = authenticator.login("main")
 
 if authenticator_status == False:
     st.error("Username/password is incorrect")
 
-if authenticator_status == None:
+if authenticator_status is None:
     st.warning("Insira login e senha")
 
 if authenticator_status:
