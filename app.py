@@ -65,6 +65,7 @@ with file_path.open("rb") as file:
 credentials = {
     "usernames": {
         usernames[0]: {  # "gruposolano"
+            "email": "gruposolano@gmail.com",
             "name": names[0],  # "Grupo Solano"
             "password": hashed_passwords[0]  # hash da senha correspondente
         }
