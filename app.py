@@ -79,14 +79,14 @@ login_result = authenticator.login('main')
 # Verificar se o login_result é None
 if login_result is None:
     st.warning("Por favor, insira seu login e senha.")
-else:
+if login_result is not None:
     name, authenticator_status, username = login_result
 
     if authenticator_status:
         whiteLogo = 'img/Main Logo White.png'
         blackLogo = 'img/Main Logo Black.png'
         iconLogo = 'img/White Icone.png'
-    
+
         #Carregando Dados
         @st.cache_data()
         def carregarDados():
