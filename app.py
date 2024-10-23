@@ -77,6 +77,9 @@ authenticator = stauth.Authenticate(credentials, "whobuys", "random_key", cookie
 
 name, authenticator_status, username = authenticator.login('main')
 
+if authenticator_status == None:
+    st.warning("Insira login e senha")
+
 if authenticator_status:
     whiteLogo = 'img/Main Logo White.png'
     blackLogo = 'img/Main Logo Black.png'
@@ -287,8 +290,5 @@ if authenticator_status:
                  )
     elif selecionado == "Sair":
         authenticator.logout("Sair", "main")
-    elif authenticator_status == False:
-        st.error("Username/password is incorrect")
-
-    elif authenticator_status == None:
-        st.warning("Insira login e senha")
+if authenticator_status == False:
+    st.error("Username/password is incorrect")
