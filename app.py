@@ -84,7 +84,7 @@ else:
     # Desempacota os valores
     name, authenticator_status, username = login_response
 
-#name, authenticator_status, username = authenticator.login("main")
+name, authenticator_status, username = authenticator.login("main")
 
 if authenticator_status == False:
     st.error("Username/password is incorrect")
